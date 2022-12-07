@@ -1,5 +1,6 @@
-require 'selenium-cucumber'
+require 'appium_lib'
+require 'json'
 require 'rubygems'
 require 'rspec'
 require 'rspec/expectations'
-require 'appium_lib'
+require 'selenium-cucumber'
