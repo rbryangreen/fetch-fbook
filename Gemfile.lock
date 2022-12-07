@@ -89,6 +89,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  appium_lib
   cucumber
   selenium-cucumber
 

@@ -1,3 +1,3 @@
-Before do |scenario|
-
-end
+# Before do |scenario|
+#
+# end
