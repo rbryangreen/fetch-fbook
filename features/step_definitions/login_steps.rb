@@ -4,13 +4,12 @@ Given(/^I am on the Facebook Log In page$/) do
 end
 
 Then(/^the Log In fields are correctly displayed$/) do
-  expect(exists { LoginPage.phone_or_email } ).to be true
+  expect(exists { LoginPage.user_name } ).to be true
   expect(exists { LoginPage.password } ).to be true
-  expect(exists { LoginPage.phone_or_email } ).to be true
 end
 
 Then(/^I set the Username field to (.*)$/) do |user_name|
-  LoginPage.phone_or_email.send_keys(user_name)
+  LoginPage.user_name.send_keys(user_name)
 end
 
 And(/^I set the Password field to (.*)$/) do |password|
