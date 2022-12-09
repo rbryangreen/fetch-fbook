@@ -12,3 +12,11 @@ end
 And(/^I tap on the top search result$/) do
   SearchPage.top_search_result.click
 end
+
+# Use these combined steps in the Background to get a user to a Facebook profile
+And(/^I navigate to the (.*) Facebook page$/) do |page|
+  step 'I tap the search button'
+  step "I search for #{page} in Facebook pages"
+  step 'I tap on the top search result'
+  step 'I am on the Fetch Rewards Facebook page'
+end
