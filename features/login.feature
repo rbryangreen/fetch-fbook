@@ -22,4 +22,4 @@ Feature: Facebook Log In page
     When I set the Username field to mcfacebook82@gmail.com
     And I set the Password field to badpassword123
     And I tap on the Log In button
-    And I see an error message that stustu@mailinator.com is not a recognized email
+    And I see an error message indicating an incorrect password
