@@ -78,13 +78,15 @@ You will need the Android SDK Tools to be installed on your system.
 
          $ mkdir -p ~/Library/Android/sdk/platforms
 
-2. Go to the [Android Studio Downloads](https://developer.android.com/studio#downloads) page, and scroll to the **Command line tools only** section to download the tools for Mac OS. Extract the zip file in the **~/Library/Android/sdk** folder. You should end up with **~/Library/Android/sdk/cmdline-tools**.
+2. Go to the [Android Studio Downloads](https://developer.android.com/studio#downloads) page, and follow the instructions to download Android Studio
 
-3. Next, create a folder called `latest`, within the `cmdline-tools` folder:
+3. You should now have **~/Library/Android/sdk/cmdline-tools**.
+
+4. Next, create a folder called `latest`, within the `cmdline-tools` folder:
 
          $ mkdir -p ~/Library/Android/sdk/cmdline-tools/latest
 
-4. Now, move everything within `~/Library/Android/sdk/cmdline-tools` (except the `latest` folder) into `~/Library/Android/sdk/cmdline-tools/latest`:
+5. Now, move everything within `~/Library/Android/sdk/cmdline-tools` (except the `latest` folder) into `~/Library/Android/sdk/cmdline-tools/latest`:
 
          $ mv ~/Library/Android/sdk/cmdline-tools/bin* ~/Library/Android/sdk/cmdline-tools/latest
          $ mv ~/Library/Android/sdk/cmdline-tools/lib* ~/Library/Android/sdk/cmdline-tools/latest
@@ -141,4 +143,10 @@ You will need Bundler to manage your gems
 ### Cucumber
 
 Cucumber is the framework in which these tests are structured. To install it, follow their [Installation instructions for Ruby](https://cucumber.io/docs/installation/ruby/)
+
+## Running tests
+
+To run a single test, cd into your project root directory, and run
+
+      $ cucumber features/ 
 
