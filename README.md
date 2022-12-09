@@ -41,6 +41,10 @@ Once installed, install Cask.
 
         $ brew tap homebrew/cask
 
+Then, use homebrew to install node
+
+        $ brew install node
+
 ### Ruby
 Although MacOS comes with Ruby pre-installed, it doesn't provide all the permissions needed to run tests successfully. For this reason, you should install a separate Ruby version using `RVM`, which is also a gemset manager.
 
@@ -118,4 +122,23 @@ You will need the Android SDK Tools to be installed on your system.
 5. You will need to install the HAXM package downloaded in Step 4 above, unless your laptop has an M1+ chip. In Finder, double-click the dmg file that was downloaded.
 
             $ANDROID_HOME/extras/intel/Hardware_Accelerated_Execution_Manager/IntelHAXM_[version].dmg
+
+### Appium
+Both mobile platforms require Appium, which has both a server and a desktop application.
+
+   Install the Appium server and the mobile drivers with npm.
+
+         $ npm install -g appium@next
+         $ appium driver install xcuitest
+         $ appium driver install uiautomator2
+
+### Bundler
+
+You will need Bundler to manage your gems
+
+      $ gem install bundler
+
+### Cucumber
+
+Cucumber is the framework in which these tests are structured. To install it, follow their [Installation instructions for Ruby](https://cucumber.io/docs/installation/ruby/)
 
