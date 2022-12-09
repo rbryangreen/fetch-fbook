@@ -20,3 +20,11 @@ end
 And(/^I tap on the Log In button$/) do
   LoginPage.login_button.click
 end
+
+# Use these combined steps for logging in users in Backgrounds.
+And(/^I have logged in:$/) do |table|
+  step "I set the Username field to #{table.rows_hash['user_name']}"
+  step "I set the Password field to #{table.rows_hash['password']}"
+  step 'I tap on the Log In button'
+  step 'I am logged into Facebook'
+end
