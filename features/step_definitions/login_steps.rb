@@ -21,6 +21,11 @@ And(/^I tap on the Log In button$/) do
   LoginPage.login_button.click
 end
 
+Then(/^I see an error message that (.*) is not a recognized email$/) do |email_address|
+  $driver.wait_true(timeout: 60) { exists { LoginPage.find_account_button } }
+  expect(exists { LoginPage.unknown_email_error_msg(email_address) }).to be true
+end
+
 # Use these combined steps for logging in users in Backgrounds.
 And(/^I have logged in:$/) do |table|
   step "I set the Username field to #{table.rows_hash['user_name']}"
