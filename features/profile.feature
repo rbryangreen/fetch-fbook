@@ -6,6 +6,9 @@ Feature: Facebook profile pages
       | password  | theDivisionbell45!     |
     And I navigate to the Fetch Rewards Facebook page
 
+    @like
     Scenario: I can Like a Facebook profile
+      When I click the Like button
+      Then I have liked the page
 
 

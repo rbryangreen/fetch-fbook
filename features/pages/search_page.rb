@@ -17,11 +17,12 @@ class SearchPage
   end
 
   def self.search_field
-    $driver.find_element(xpath: '//android.widget.EditText')
+    $driver.xpath('//android.widget.EditText')
   end
 
+  # Locates the top search result returned in your previous search
   def self.top_search_result
-    $driver.find_element(xpath: '//android.view.ViewGroup[@content-desc="Like Page"]/parent::node()')
+    $driver.xpath("//android.view.ViewGroup[contains(@content-desc, 'Like')]/parent::node()")
   end
 
 end
