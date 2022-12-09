@@ -7,13 +7,13 @@ After('@like') do
 end
 
 After do
-  # add logout here
+  $driver.restart
 end
 
-After do
-  begin
-    $driver.driver.terminate_app
-  rescue
-    log 'Rescue from resetting the driver'
-  end
-end
+# After do
+#   begin
+#     $driver.driver.terminate_app
+#   rescue
+#     log 'Rescue from resetting the driver'
+#   end
+# end
