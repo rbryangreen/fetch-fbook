@@ -37,6 +37,7 @@ $desired_caps = {
     'appium:nativeWebScreenshot': true,
     'appium:newCommandTimeout': 12000,
     'appium:noSign': true,
+    'appium:sendKeyStategy': 'grouped',
     'appium:systemPort': 8200,
     'appium:uiautomator2ServerLaunchTimeout': 600000,
     # 'appium:wdaLocalPort': $nightly ? 8100 + ($avd.split('-')[1].to_i * 2) : 8102,
