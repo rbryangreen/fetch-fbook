@@ -1,12 +1,19 @@
 Feature: Facebook Log In page
 
-  Scenario: The log in fields are correctly displayed
+  Background: I open the Facebook app
     Given I am on the Facebook Log In page
+
+  Scenario: The log in fields are correctly displayed
     Then the Log In fields are correctly displayed
     
   Scenario: Log into Facebook
-    Given I am on the Facebook Log In page
-    And I set the Username field to bg.automation82@gmail.com
-    And I set the Password field to 1kingGizzard1
+    When I set the Username field to mcfacebook82@gmail.com
+    And I set the Password field to theDivisionbell45!
+    And I tap on the Log In button
+    Then I am logged into Facebook
+
+  Scenario: Failed Log in attempt with email not associated with Facebook
+    When I set the Username field to stustu@mailinator.com
+    And I set the Password field to badpassword123
     And I tap on the Log In button
     Then I am logged into Facebook
