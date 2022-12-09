@@ -93,6 +93,22 @@ You will need the Android SDK Tools to be installed on your system.
 
    Make sure you move all directories and files into the `latest` directory.
 
+### Download Android Emulator
+
+1. Open the Android Studio app on your computer
+
+2. Click "More Actions" > Virtual Device Manager
+
+3. On the Device Manager window, click "Create Device"
+
+4. Choose an Android device (I am using a Pixel 6), and click "Next"
+
+5. Choose an Android system image (I am using Tiramisu (API_33)), and click "Next"
+
+6. Click "Finish"
+
+7. You should now have access to an Android Emulator. To launch it, go to "More Actions" > Virtual Device Manager, and click the Play button next to the emulator
+
 ### Set up PATH variables in `~/.bash_profile`
 
 1. Add the following to your `~/.bash_profile` file:
