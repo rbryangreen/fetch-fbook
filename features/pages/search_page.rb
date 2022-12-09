@@ -12,7 +12,6 @@ class SearchPage
 
   # Use this to enter a value into the search field
   # @param search_term [String] The term you want to search for
-  # @param enter [Boolean] Use true if you wish to tap the enter key after the search
   def self.search(search_term)
     search_field.clear
     search_field.click
