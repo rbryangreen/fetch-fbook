@@ -93,7 +93,7 @@ You will need the Android SDK Tools to be installed on your system.
 
    Make sure you move all directories and files into the `latest` directory.
 
-### Download Android Emulator
+### Android Emulator
 
 1. Open the Android Studio app on your computer
 
