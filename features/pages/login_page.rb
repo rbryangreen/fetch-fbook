@@ -5,7 +5,19 @@ class LoginPage
   end
 
   def self.find_account_button
-    $driver.xpath('//android.widget.Button[contains(@text, "FIND ACCOUNT")]')
+    $driver.xpath('//android.widget.Button[@text="FIND ACCOUNT"]')
+  end
+
+  def self.incorrect_password_header
+    $driver.xpath('//android.widget.TextView[@text="Incorrect password"]')
+  end
+
+  def self.incorrect_password_message
+    $driver.xpath('//android.widget.TextView[@text="The password you entered is incorrect. Please try again or get a code to log in."]')
+  end
+
+  def self.ok_button
+    $driver.xpath('//android.widget.Button[@text="OK"]')
   end
 
   def loading_spinner

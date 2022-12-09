@@ -26,6 +26,12 @@ Then(/^I see an error message that (.*) is not a recognized email$/) do |email_a
   expect(exists { LoginPage.unknown_email_error_msg(email_address) }).to be true
 end
 
+Then(/^I see an error message indicating an incorrect password$/) do
+  $driver.wait_true(timeout: 60) { exists { LoginPage.ok_button } }
+  expect(exists { LoginPage.incorrect_password_header }).to be true
+  expect(exists { LoginPage.incorrect_password_message }).to be true
+end
+
 # Use these combined steps for logging in users in Backgrounds.
 And(/^I have logged in:$/) do |table|
   step "I set the Username field to #{table.rows_hash['user_name']}"

@@ -17,3 +17,9 @@ Feature: Facebook Log In page
     And I set the Password field to badpassword123
     And I tap on the Log In button
     And I see an error message that stustu@mailinator.com is not a recognized email
+
+  Scenario: Failed Log in attempt due to bad password
+    When I set the Username field to mcfacebook82@gmail.com
+    And I set the Password field to badpassword123
+    And I tap on the Log In button
+    And I see an error message that stustu@mailinator.com is not a recognized email
