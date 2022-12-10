@@ -1,4 +1,8 @@
+@search
 Feature: Facebook search
+  As a Facebook user
+  I want to search for things that interest me
+  So that I can find profiles
 
   Background: User is logged into Facebook
     Given I have logged in:

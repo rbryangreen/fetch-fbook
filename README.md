@@ -93,7 +93,7 @@ You will need the Android SDK Tools to be installed on your system.
 
    Make sure you move all directories and files into the `latest` directory.
 
-### Download Android Emulator
+### Android Emulator
 
 1. Open the Android Studio app on your computer
 
@@ -156,13 +156,51 @@ You will need Bundler to manage your gems
 
       $ gem install bundler
 
+Now, do a bundle install:
+   
+      $ bundle install
+
 ### Cucumber
 
 Cucumber is the framework in which these tests are structured. To install it, follow their [Installation instructions for Ruby](https://cucumber.io/docs/installation/ruby/)
 
 ## Running tests
 
-To run a single test, cd into your project root directory, and run
+### Start Appium server
+Before you run a test, you will need to start an Appium server. Open a terminal window, and run:
+
+      $ appium --base-path /wd/hub --address 127.0.0.1 --port 4723
+**Note:** You will also need to kill this server after the test finishes (instructions below)
+
+Wait a moment for the server to start. The logs should indicate that uiautomator2 is now available:
+
+      [Appium] Available drivers:
+      [Appium]   - uiautomator2@2.11.1 (automationName 'UiAutomator2')
+
+### Run tests from terminal
+
+Once your Appium server is up and running, open a separate terminal window to execute your tests
+
+In the new terminal window, CD into the root directory of the project:
+
+      $ cd [project directory]/fetch-fbook/
+
+To run all the tests in the features directory, cd into your project root directory, and run:
 
       $ cucumber features/ 
 
+To run a specific feature file, cd into your project root directory, and choose a specific feature file:
+
+      $ cucumber features/profile.feature 
+
+To run a specific scenario, you'll need to provide the line number of that scenario:
+
+      $ cucumber features/profile.feature:11 
+
+### Kill Appium server
+
+Before running tests again, you'll need to kill the current Appium server, and start a new one
+
+To do this, either `control+c` in the terminal window that is displaying the appium logs, or in a separate terminal window:
+
+      $ pkill -9 -f appium
