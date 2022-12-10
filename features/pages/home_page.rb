@@ -1,3 +1,5 @@
+# Page Objects on the Landing page
+
 class HomePage
 
   # The Facebook Search button (magnifying glass) on the Activity Feed

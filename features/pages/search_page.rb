@@ -1,3 +1,5 @@
+# Page Objects on the Search page
+
 class SearchPage
 
   # The 'All' header above the search results

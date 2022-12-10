@@ -10,7 +10,7 @@ And(/^I click the Like button$/) do
 end
 
 And(/^I have liked the page$/) do
-  ProfilePage.like_button.click
+  step 'I click the Like button'
   # The presence of the Unlike button means the user has liked this page
   expect( exists { ProfilePage.unlike_button } ).to be true
 end

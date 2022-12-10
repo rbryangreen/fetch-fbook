@@ -1,4 +1,8 @@
+@profile
 Feature: Facebook profile pages
+  As a Facebook user
+  I want to view a profile
+  So that I can like the page
 
   Background: User is logged into Facebook
     Given I have logged in:

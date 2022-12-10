@@ -156,13 +156,24 @@ You will need Bundler to manage your gems
 
       $ gem install bundler
 
+Now, do a bundle install:
+   
+      $ bundle install
+
 ### Cucumber
 
 Cucumber is the framework in which these tests are structured. To install it, follow their [Installation instructions for Ruby](https://cucumber.io/docs/installation/ruby/)
 
 ## Running tests
 
-To run a single test, cd into your project root directory, and run
+To run all the tests in the features directory, cd into your project root directory, and run:
 
       $ cucumber features/ 
 
+To run a specific feature file, cd into your project root directory, and choose a specific feature file:
+
+      $ cucumber features/profile.feature 
+
+To run a specific scenario, you'll need to provide the line number of that scenario:
+
+      $ cucumber features/profile.feature:11 

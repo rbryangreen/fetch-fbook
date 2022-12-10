@@ -1,3 +1,5 @@
+# Page Objects on the Login page
+
 class LoginPage
 
   # Create new account button

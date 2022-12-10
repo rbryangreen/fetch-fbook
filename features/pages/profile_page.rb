@@ -1,3 +1,5 @@
+# Page Objects on the Profile page
+
 class ProfilePage
 
   # Locates the top post authored by Fetch
@@ -19,6 +21,8 @@ class ProfilePage
         swipe_direction('down')
       end
     end
+    swipe_direction('down')
+    sleep 0.5
     $driver.find_element(accessibility_id: 'like button')
   end
 

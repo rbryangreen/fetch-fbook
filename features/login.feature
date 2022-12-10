@@ -1,4 +1,8 @@
+@login
 Feature: Facebook Log In page
+  As a Facebook user
+  I want to log into the app
+  So that I can use it
 
   Background: I open the Facebook app
     Given I am on the Facebook Log In page
