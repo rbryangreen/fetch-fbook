@@ -2,6 +2,10 @@ Before('@like') do
   @like = true
 end
 
+Before do
+  $version = nil
+end
+
 After do
   if @like
     # Reset state of Like button

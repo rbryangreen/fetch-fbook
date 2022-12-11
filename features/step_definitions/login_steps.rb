@@ -1,7 +1,8 @@
 Given(/^I am on the Facebook Log In page$/) do
   # Wait ensures the page is loaded
-  $driver.wait_true(timeout: 60) { exists { LoginPage.create_new_facebook_account } }
-  expect(exists { LoginPage.create_new_facebook_account } ).to be true
+  LoginPage.wait_for_login_page
+  LoginPage.determine_page_version
+  expect(exists { LoginPage.create_new_facebook_btn } ).to be true
 end
 
 Then(/^the Log In fields are correctly displayed$/) do
@@ -9,12 +10,26 @@ Then(/^the Log In fields are correctly displayed$/) do
   expect(exists { LoginPage.password } ).to be true
 end
 
+# Because the app randomly loads two different versions of the login page, I've accounted for both here.
 Then(/^I set the Username field to (.*)$/) do |user_name|
-  LoginPage.user_name.send_keys(user_name)
+  if $version == 1
+    LoginPage.user_name.send_keys(user_name)
+  else
+    # A slightly different send_keys approach is needed on v2 of the page
+    LoginPage.user_name.click
+    $driver.action.send_keys(user_name).perform
+  end
 end
 
+# Because the app randomly loads two different versions of the login page, I've accounted for both here.
 And(/^I set the Password field to (.*)$/) do |password|
-  LoginPage.password.send_keys(password)
+  if @version == 1
+    LoginPage.password.send_keys(password)
+  else
+    # A slightly different send_keys approach is needed on v2 of the page
+    LoginPage.password.click
+    $driver.action.send_keys(password).perform
+  end
 end
 
 And(/^I tap on the Log In button$/) do
