@@ -2,6 +2,7 @@
 
 class LoginPage
 
+  # The "Create New Facebook Account" button.
   def self.create_new_facebook_btn
     if $version == 1
       $driver.find_element(accessibility_id: 'Create new Facebook account')
@@ -34,6 +35,11 @@ class LoginPage
   # Error message body that appears when an incorrect password has been entered
   def self.incorrect_password_message
     $driver.xpath('//android.widget.TextView[@text="The password you entered is incorrect. Please try again or get a code to log in."]')
+  end
+
+  # The "Not now" button that appears sometimes after entering login credentials
+  def self.not_now_button
+    $driver.xpath('//android.view.View[@content-desc="Not now"]')
   end
 
   # OK button that appears in the incorrect password error message
