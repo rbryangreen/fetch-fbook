@@ -1,10 +1,24 @@
-# Page Objects on the Login page
+# Page Objects and helper methods on the Login page
 
 class LoginPage
 
-  # Create new account button
-  def self.create_new_facebook_account
-    $driver.find_element(accessibility_id: 'Create new Facebook account')
+  def self.create_new_facebook_btn
+    if $version == 1
+      $driver.find_element(accessibility_id: 'Create new Facebook account')
+    else
+      $driver.xpath('//android.widget.Button[@content-desc="Create new account"]')
+    end
+  end
+
+  # After the Login page loads, set a variable to determine which version of the page it is.
+  def self.determine_page_version
+    if $driver.exists { $driver.find_element(accessibility_id: 'Create new Facebook account') }
+      puts "Login page v1 loaded"
+      $version = 1
+    else
+      puts "Login page v2 loaded"
+      $version = 2
+    end
   end
 
   # The Find Account button that appears when the user enters an email not associated with a Facebook account
@@ -35,7 +49,7 @@ class LoginPage
   # The button to log in a user
   # The app randomly serves two different versions of this page, so I modeled both.
   def self.login_button
-    if $driver.exists { $driver.find_element(accessibility_id: 'Log In') }
+    if $version == 1
       $driver.find_element(accessibility_id: 'Log In')
     else
       $driver.xpath('//android.widget.Button[@content-desc="Log in"]')
@@ -56,10 +70,23 @@ class LoginPage
   # The Username field for logging in. (placehold text says 'Phone or email' on the login page)
   # The app randomly serves two different versions of this page, so I modeled both.
   def self.user_name
-    if $driver.exists { $driver.find_element(accessibility_id: 'Username') }
+    if $version == 1
       $driver.find_element(accessibility_id: 'Username')
     else
       $driver.find_element(accessibility_id: 'Mobile number or email')
+    end
+  end
+
+  def self.wait_for_login_page
+    20.times do
+      exist = []
+      exist << $driver.exists { create_new_facebook_btn_1 }
+      exist << $driver.exists { create_new_facebook_btn_2 }
+      if exist.include? true
+        break
+      else
+        sleep 0.5
+      end
     end
   end
 
