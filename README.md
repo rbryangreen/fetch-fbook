@@ -167,7 +167,7 @@ Cucumber is the framework in which these tests are structured. To install it, fo
 ## Running tests
 
 ### Start Android Emulator
-Before running Android tests, an Android emulator needs to be running. Instructions on how to do this are listed above in the Android Emulator section.
+Before running Android tests, an Android emulator needs to be running. Instructions on how to do this are listed above in the [Android Emulator section](https://github.com/rbryangreen/fetch-fbook#android-emulator).
 
 ### Start Appium server
 Before you run a test, you will need to start an Appium server. Open a terminal window, and run:
