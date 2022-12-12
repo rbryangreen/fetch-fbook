@@ -38,7 +38,7 @@ class LoginPage
   end
 
   # Appears while a page is loading
-  def loading_spinner
+  def self.loading_spinner
     $driver.find_element(class: 'android.widget.ProgressBar')
   end
 
