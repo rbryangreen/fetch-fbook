@@ -1,4 +1,4 @@
-# Page Objects on the Landing page
+# Page Objects on the Landing page/activity feed
 
 class HomePage
 
