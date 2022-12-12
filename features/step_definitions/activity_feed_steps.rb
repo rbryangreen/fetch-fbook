@@ -8,6 +8,7 @@ And(/^I am logged into Facebook$/) do
     end
   end
   $driver.wait_true(timeout: 60) { exists { HomePage.whats_on_your_mind } }
+  # Seeing the "What's on your mind" field verifies we are logged in
   expect(exists { HomePage.whats_on_your_mind } ).to be true
 end
 

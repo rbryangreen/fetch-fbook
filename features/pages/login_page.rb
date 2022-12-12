@@ -37,18 +37,8 @@ class LoginPage
     $driver.xpath('//android.widget.TextView[@text="The password you entered is incorrect. Please try again or get a code to log in."]')
   end
 
-  # The "Not now" button that appears sometimes after entering login credentials
-  def self.not_now_button
-    $driver.xpath('//android.view.View[@content-desc="Not now"]')
-  end
-
-  # OK button that appears in the incorrect password error message
-  def self.ok_button
-    $driver.xpath('//android.widget.Button[@text="OK"]')
-  end
-
   # Appears while a page is loading
-  def loading_spinner
+  def self.loading_spinner
     $driver.find_element(class: 'android.widget.ProgressBar')
   end
 
@@ -62,6 +52,16 @@ class LoginPage
     end
   end
 
+  # The "Not now" button that appears sometimes after entering login credentials
+  def self.not_now_button
+    $driver.xpath('//android.view.View[@content-desc="Not now"]')
+  end
+
+  # OK button that appears in the incorrect password error message
+  def self.ok_button
+    $driver.xpath('//android.widget.Button[@text="OK"]')
+  end
+
   # The Password text entry field
   def self.password
     $driver.find_element(accessibility_id: 'Password')
@@ -73,7 +73,7 @@ class LoginPage
     $driver.xpath("//android.widget.TextView[contains(@text, \"It looks like #{email_address} isn't connected to an account but we can help you find your account and log in.\")]")
   end
 
-  # The Username field for logging in. (placehold text says 'Phone or email' on the login page)
+  # The Username field for logging in. (placeholder text says 'Phone or email' on the login page)
   # The app randomly serves two different versions of this page, so I modeled both.
   def self.user_name
     if $version == 1
@@ -83,6 +83,7 @@ class LoginPage
     end
   end
 
+  # Helper method that allows the test to wait until the log in page is fully loaded.
   def self.wait_for_login_page
     20.times do
       exist = []

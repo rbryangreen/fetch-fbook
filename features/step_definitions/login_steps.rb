@@ -1,5 +1,4 @@
 Given(/^I am on the Facebook Log In page$/) do
-  # Wait ensures the page is loaded
   LoginPage.wait_for_login_page
   LoginPage.determine_page_version
   expect(exists { LoginPage.create_new_facebook_btn } ).to be true
