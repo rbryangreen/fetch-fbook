@@ -3,8 +3,13 @@
 class HomePage
 
   # The Facebook Search button (magnifying glass) on the Activity Feed
+  # Because the app randomly loads two different versions of this button, I've accounted for both here.
   def self.search_button
-    $driver.find_element(accessibility_id: 'Search')
+    if $version = 1
+      $driver.find_element(accessibility_id: 'Search Facebook')
+    else
+      $driver.xpath('//android.widget.Button[@content-desc="Search"]')
+    end
   end
 
   # The field used to begin making a Facebook post on the Activity Feed
