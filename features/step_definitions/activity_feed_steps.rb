@@ -13,6 +13,6 @@ And(/^I am logged into Facebook$/) do
 end
 
 And(/^I tap the search button$/) do
-  sleep 4 # although the page loads, the search button is not immediately clickable
+  sleep 2 # although the page loads, the search button is not immediately clickable
   HomePage.search_button.click
 end
